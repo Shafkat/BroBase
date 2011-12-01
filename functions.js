@@ -1,19 +1,26 @@
-var search_params = $('#bs_bar').val();
 
+$(document).ready( function(){
 $('#bs_button').click( bs_call );
-
+});
 function bs_call()
 {	
+var search_params = $('#bs_bar').val();
 	//Initiallizing the AJAX request.
 	$.ajax({
-		url: 'localhost:3000/profiles/search?=' + search_params,
+		url: 'http://localhost:3000/profiles.json?search=' + search_params,
+		type: "GET",
 		dataType: 'jsonp',
 		callbackParameter: "jsoncallback",
 		timeout: 2500,
 		success: function(result, textStatus, jqXHR)
 		{
 			console.log('Success!');
-			console.log(result);
+			var array = new Array();
+			array = result;
+			for(var i = 0; i < array.length; i++)
+			{
+				console.log(array[i].name);
+			}
 		},
 		error: function(result, status, errorThrown) 
 		{ 
