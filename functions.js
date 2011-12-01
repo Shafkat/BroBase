@@ -1,7 +1,17 @@
-
 $(document).ready( function(){
-$('#bs_button').click( bs_call );
+	$('#bs_button').click( bs_call );
+
+	$('#bs').mouseenter( function(){
+		$('#bs').html('BroSearch');
+	});
+
+	$('#bs').mouseleave( function(){
+		$('#bs').html('BS');
+	});
+	
 });
+
+
 function bs_call()
 {	
 var search_params = $('#bs_bar').val();
@@ -17,6 +27,7 @@ var search_params = $('#bs_bar').val();
 			console.log('Success!');
 			var array = new Array();
 			array = result;
+			popBros(array);
 			for(var i = 0; i < array.length; i++)
 			{
 				console.log(array[i].name);
@@ -27,16 +38,37 @@ var search_params = $('#bs_bar').val();
 			console.log('Failure...');
 			var result = {
 				data: [ 
-				/*
-					{image: "http://www.glogster.com/media/3/11/33/74/11337457.jpg"}, 
-					{image: "http://moviesmedia.ign.com/movies/image/johnnybravo.jpg"},
-					{image: "http://www.picaclicks.com/images/Nature/old-cartoons.jpg"}, 
-					{image: "http://www.hilariouspetvideos.com/funny-cat.jpg"}, 
-					{image: "http://www.coolstore888.com/communities/2/004/007/974/212/images/4549879802.jpg"}
-				*/
+					{bro: "Shafkat"},
+					{bro: "Tahbit"},
 				]
 
 			}; 
 		}
 	});
+}
+
+function popBros(bros)
+{
+	broArray = new Array();
+	broArray = bros;
+	
+	for(var i = 0; i< broArray.length; i++)
+	{
+		var list = document.getElementById('broList');
+		var bro = document.createElement("li");
+		var shout = document.createElement("button");
+		shout.innerHTML = "ShoutOut";
+		bro.innerHTML = broArray[i].name;
+		list.appendChild(bro);
+		bro.appendChild(shout);
+            
+            $(bro).click( function() {
+				alert("Alpha Version Bro! Not that Awesome Yet!");
+			});
+			
+		//bro.setAttribute('id', 700+id);
+		//$(img).hide();
+		//bro.appendChild(img);
+		//$(img).fadeIn(2000).delay(500);
+    }
 }
