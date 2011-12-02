@@ -25,9 +25,6 @@
 		</center>
 	</div>
 	<script>
-	var foo = getUrlVars();
-alert(getUrlVars()[0]);
-
 	</script>
 </body>
 </html>
