@@ -41,6 +41,7 @@ var search_params = $('#bs_bar').val();
 					{bro: "Shafkat"},
 					{bro: "Tahbit"},
 				]
+			console.log(result);
 
 			}; 
 		}
