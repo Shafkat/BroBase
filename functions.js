@@ -41,7 +41,7 @@ window.location="results.html?"+$('#bs_bar').val();
 					{bro: "Shafkat"},
 					{bro: "Tahbit"},
 				]
-			console.log(result);
+			//console.log(result);
 
 			}; 
 		}
