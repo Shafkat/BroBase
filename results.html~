@@ -105,7 +105,6 @@ By Sam Dunn
 	<br />
 	<br />
 	<h1>BroSearch Results</h1>
-	<ul id="broList"></ul>
 	<div id="wrapper">
 		<div id="menuwrapper">
 			<div id="menu">
