@@ -1,0 +1,20 @@
+# -FrontPage-
+
+Options +FollowSymLinks
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.sayerrecords.com/$1 [R=301,L]
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName sayerrecords.com
+AuthUserFile /home/sayerre1/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/sayerre1/public_html/_vti_pvt/service.grp
