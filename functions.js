@@ -36,7 +36,7 @@ var search_params = $('#bs_bar').val();
 		},
 		error: function(result, status, errorThrown) 
 		{ 
-			console.log('Failure...');
+			console.log('Bummer...Something went wrong bro..');
 			var result = {
 				data: [ 
 					{bro: "Shafkat"},

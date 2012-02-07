@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^brobase\.ca$
+RewriteRule (.*) http://www.brobase.ca/$1 [R=301,L]
+RewriteRule ^$ main/home.html [L]
